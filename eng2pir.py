@@ -50,3 +50,11 @@ x = [i for i in a if i not in b]
 y = [i for i in b if i not in a]
 print(x)
 print(y)
+
+print(translate(text))
+print(translate(text).find("'"))
+print("avast me matey, please arr yer foul blaggart to th' head!")
+print("avast me matey, please arr yer foul blaggart to th' head!".find("'"))
+
+print(ord(b[50]))
+print(ord(a[50]))
