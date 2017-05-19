@@ -1,23 +1,4 @@
-def alphabet_position(letter):
-    """ Returns an index number for any letter in the alphabet"""
-    alpha = "abcdefghijklmnopqrstuvwxyz"
-    letter = letter.lower()
-    idx = alpha.find(letter)
-    return idx
-
-def rotat_character(char, rot):
-    """ Returns a character encoded by index position relative to rot"""
-    alpha = "abcdefghijklmnopqrstuvwxyz"
-    if char.isalpha():
-        idx = alphabet_position(char)
-        new_idx = (idx + rot) % 26
-        if char.isupper():
-            rot_char = alpha[new_idx].upper()
-        else:
-            rot_char = alpha[new_idx]
-    else:
-        rot_char = char
-    return rot_char
+from helpers import alphabet_position, rotat_character
 
 def vig_encrypt(text, word):
     if len(text) > len(word):
@@ -49,7 +30,8 @@ def main():
     vig_encrypt("AAAAAAAAAaaaaaaaaaaaaa", 'nally')
     vig_encrypt("EEEEEEEEEEEEeeeeeeeeeeeee", 'nally')
     vig_encrypt("helLO", 'I don\'t like Mondays!')
-
+    vig_encrypt(input("Give me a string:"), input("And a key:"))
+ #   testEqual(vig_encrypt("The crow flies at midnight!", 'boom'), 'Uvs osck rmwse bh auebwsih!')
 
 
 
