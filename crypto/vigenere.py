@@ -1,6 +1,6 @@
 from helpers import alphabet_position, rotat_character
 
-def vig_encrypt(text, word):
+def encrypt(text, word):
     if len(text) > len(word):
         x = len(text) // len(word)
         y = len(text) % len(word)
@@ -18,22 +18,28 @@ def vig_encrypt(text, word):
     for letter in text:
         if letter == " ":
             encrypt_list += " "
+        elif letter.isalpha():
+             encrypt_list += rotat_character(letter, idx_list[i])
+             i += 1
+            #encrypt_list += letter
         else:
-            encrypt_list += rotat_character(letter, idx_list[i])
-            i += 1
+            encrypt_list += letter
+            #encrypt_list += rotat_character(letter, idx_list[i])
+            #i += 1
     print(encrypt_list)
     return encrypt_list
 
 def main():
-    vig_encrypt("The crow flies at midnight!", 'boom')
-    vig_encrypt("W       3   a", 'bc')
-    vig_encrypt("AAAAAAAAAaaaaaaaaaaaaa", 'nally')
-    vig_encrypt("EEEEEEEEEEEEeeeeeeeeeeeee", 'nally')
-    vig_encrypt("helLO", 'I don\'t like Mondays!')
-    vig_encrypt(input("Give me a string:"), input("And a key:"))
- #   testEqual(vig_encrypt("The crow flies at midnight!", 'boom'), 'Uvs osck rmwse bh auebwsih!')
-
-
+    # encrypt("The crow flies at midnight!", 'boom')
+    # encrypt("W       3   a", 'bc')
+    # encrypt("AAAAAAAAAaaaaaaaaaaaaa", 'nally')
+    # encrypt("EEEEEEEEEEEEeeeeeeeeeeeee", 'nally')
+    # encrypt("helLO", 'I don\'t like Mondays!')
+    # encrypt(input("Give me a string:"), input("And a key:"))
+    #encrypt("The crow flies at midnight!", 'boom'), 'Uvs osck rmwse bh auebwsih!')
+    encrypt('a', 'a')
+    encrypt('Sailing <3 ships thru br0ken harbors', 'NeilYoung')
+    encrypt("Ailin lakjfl jjj", "hello cruel world")
 
 if __name__ == "__main__":
     main()

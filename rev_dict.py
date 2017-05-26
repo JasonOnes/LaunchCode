@@ -12,9 +12,16 @@ adict = {1:"one", 2:"two", 3:["three", "four", "five"]}
 bdict = {k : v for k,v in enumerate("Hello cruel world!")}
 fruit_dictionary = {'apples':'2','pears':'4','bananas':'6','kiwi':'10'}
 cdict = {'apple': 2, 'pears': 4, 'bananas': 6, 'kiwi':10}
-if __name__ == "__main__":
 
+def test_key():
+    assert dict.keys() == type(str)
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
     print(reverse_dict(adict))
     print(reverse_dict(bdict))
     print(reverse_dict(fruit_dictionary))
     print(reverse_dict(cdict))
+
+    
